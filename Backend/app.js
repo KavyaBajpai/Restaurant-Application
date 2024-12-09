@@ -12,6 +12,8 @@ app.use( cors({
     credentials: true
 }));
 
+//checking
+
 app.use( express.json )
 app.use(express.urlencoded({extended: true, limit: "16kb"}))
 
