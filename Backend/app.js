@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { dbConnect } from "./db_connect/db_connect.js";
 import { ErrorMiddleware } from "./error/error.js";
-import reservationRouter from "./routes/reservationRoute.js"
+import router from "./routes/reservationRoute.js"
 
 
 const app = express()
@@ -18,7 +18,7 @@ app.use( cors({
 
 app.use( express.json )
 app.use(express.urlencoded({extended: true, limit: "16kb"}))
-app.use("/api/v1/reservation", reservationRouter)
+app.use("/api/v1/reservation", router)
 
 dbConnect();
 
