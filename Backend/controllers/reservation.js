@@ -30,5 +30,6 @@ export const sendReservation = async (req, res, next) => {
 
             return next( new ErrorHandler(validationErrors.join(","), 400 ))
         }
+        return next (error)
     }
 }
