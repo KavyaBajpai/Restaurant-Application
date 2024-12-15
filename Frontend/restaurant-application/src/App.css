@@ -984,6 +984,7 @@ footer .container .banner .right {
   color: #111;
   background: transparent;
   margin-top: 30px;
+  cursor: pointer;
 }
 .reservation .container .banner .reservation_form_box form button span {
   margin-left: 1rem;

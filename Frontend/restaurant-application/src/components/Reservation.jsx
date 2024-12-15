@@ -21,8 +21,8 @@ const Reservation = () => {
        try 
        {
          const {data} = await axios.post (
-            "http://localhost:4000/reservation/send",
-            { firstName, lastName, email, phone, time, date },
+            "http://localhost:5000/api/v1/reservation/send",
+            { firstName, lastName, email, phone, date, time },
             {
                 headers: 
                 {
@@ -44,7 +44,7 @@ const Reservation = () => {
 
        catch (error) 
        {
-         toast.error(error.response.data.message)
+         toast.error(error)
        }
     };
 
