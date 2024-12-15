@@ -80,6 +80,7 @@ nav .menuBtn:hover {
 }
 nav .hamburger {
   display: none;
+  cursor: pointer;
 }
 nav svg {
   font-size: 1.75rem;

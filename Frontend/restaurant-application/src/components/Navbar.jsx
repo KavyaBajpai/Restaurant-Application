@@ -10,8 +10,9 @@ const Navbar = () => {
         <div className="logo">FOODIEZ</div>
         <div className={show ? "navLinks showmenu" : "navLinks"}>
           <div className="links">
-            {data[0].navbarLinks.map((element) => (
-              <Link
+            {
+              data[0].navbarLinks.map((element) => {
+              return <Link
                 to={element.link}
                 spy={true}
                 smooth={true}
@@ -20,7 +21,8 @@ const Navbar = () => {
               >
                 {element.title}
               </Link>
-            ))}
+             })
+            }
           </div>
           <button className="menuBtn">OUR MENU</button>
         </div>
