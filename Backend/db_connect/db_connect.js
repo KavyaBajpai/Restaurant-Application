@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-export const dbConnect = async() => {
+export const dbConnect = () => {
 
-   await mongoose.connect(process.env.MONGODB_URI, {
+    mongoose.connect(process.env.MONGODB_URI, {
         dbName: "RESTAURANT_APP"
     }).then( () => {
         console.log("Connected to database successfully!")

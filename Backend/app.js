@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { dbConnect } from "./db_connect/db_connect.js";
-import { ErrorMiddleware } from "./error/error.js";
+import { errorMiddleware } from "./error/error.js";
 import router from "./routes/reservationRoute.js"
 
 
@@ -19,8 +19,12 @@ app.use( cors({
 app.use( express.json )
 app.use(express.urlencoded({extended: true, limit: "16kb"}))
 app.use("/api/v1/reservation", router)
+app.get("/", (req, res, next)=>{return res.status(200).json({
+    success: true,
+    message: "HELLO WORLD AGAIN"
+  })})
 
 dbConnect();
 
-app.use( ErrorMiddleware )
+app.use( errorMiddleware )
 export default app
